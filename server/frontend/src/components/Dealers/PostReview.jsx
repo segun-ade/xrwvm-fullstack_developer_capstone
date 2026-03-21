@@ -28,7 +28,7 @@ const PostReview = () => {
       name = sessionStorage.getItem("username");
     }
     if(!model || review === "" || date === "" || year === "" || model === "") {
-      alert("All details are mandatory")
+      alert("All details are mandatory! Pls try again!")
       return;
     }
 
