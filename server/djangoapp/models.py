@@ -44,16 +44,16 @@ class CarModel(models.Model):  # Many-to-One relationship
     ]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
     year = models.IntegerField(default=2023,
-    validators=[
-        MaxValueValidator(2023),
-        MinValueValidator(2015)
+        validators=[
+            MaxValueValidator(2023),
+            MinValueValidator(2015)
     ])
     # Other fields as needed
     price = models.IntegerField(default=10000,
-    validators=[
-        MaxValueValidator(5000),
-        MinValueValidator(15000)
+        validators=[
+            MaxValueValidator(5000),
+            MinValueValidator(15000)
     ])
-    
+
     def __str__(self):
         return self.name  # Return the name as the string representation
