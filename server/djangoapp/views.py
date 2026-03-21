@@ -23,9 +23,9 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def get_cars(request):
-    count = CarMake.objects.filter().count()
-    print(count)
-    if (count == 0):
+	count = CarMake.objects.filter().count()
+	print(count)
+	if (count == 0):
         initiate()
     car_models = CarModel.objects.select_related('car_make')
     cars = []
@@ -66,14 +66,14 @@ def registration(request):
 #   context = {}
 
 	# Load JSON data from the request body
-    data = json.loads(request.body)
-    username = data['userName']
-    password = data['password']
-    first_name = data['firstName']
-    last_name = data['lastName']
-    email = data['email']
-    username_exist = False
-    email_exist = False
+	data = json.loads(request.body)
+	username = data['userName']
+	password = data['password']
+	first_name = data['firstName']
+	last_name = data['lastName']
+	email = data['email']
+	username_exist = False
+	email_exist = False
 	try:
 		# Check if user already exists
 		User.objects.get(username=username)
