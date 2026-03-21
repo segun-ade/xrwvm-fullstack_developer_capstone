@@ -74,7 +74,7 @@ def registration(request):
     email = data['email']
     username_exist = False
     email_exist = False
-    try:
+	try:
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
