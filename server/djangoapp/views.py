@@ -74,17 +74,17 @@ def registration(request):
     email = data['email']
     username_exist = False
     email_exist = False
-    try:
+	try:
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
-    except Exception as err:
+	except Exception as err:
         # If not, simply log this is a new user
 		print(f"{type(err)}")
         logger.debug("{} is new user".format(username))
 
-    # If it is a new user
-    if not username_exist:
+	# If it is a new user
+	if not username_exist:
         # Create user in auth_user table
         user = User.objects.create_user(
 			username=username,
